@@ -47,7 +47,10 @@ CREATE TABLE Emprunt (
   date_emprunt date NOT NULL,
   date_retour date NOT NULL,
   code_reservation INT NOT NULL,
-  code_gerant INT NOT NULL,  
+  code_gerant_emprunt INT NOT NULL,
+  code_gerant_retour INT NOT NULL,
   FOREIGN KEY (code_reservation) REFERENCES Reservation(code_reservation),
-  FOREIGN KEY (code_gerant) REFERENCES Gerant(code_gerant)
+  FOREIGN KEY (code_gerant) REFERENCES Gerant(code_gerant),
+  FOREIGN KEY (code_gerant_retour) REFERENCES Gerant(code_gerant)
+
 );
